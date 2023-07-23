@@ -28,9 +28,9 @@ def process(sample):
 
 if __name__ == '__main__':
     train = load_dataset('json',
-            data_files= {'train': ['/data/mohamed/data/chaosNLI_v1.0/chaosNLI_snli.jsonl',
-                    '/data/mohamed/data/chaosNLI_v1.0/chaosNLI_mnli_m.jsonl']})
-    snli = load_from_disk('/data/mohamed/data/snli_balanced')
+            data_files= {'train': ['data/chaosNLI_v1.0/chaosNLI_snli.jsonl',
+                    'data/chaosNLI_v1.0/chaosNLI_mnli_m.jsonl']})
+    snli = load_from_disk('data/snli_balanced')
     snli['dev'] = snli['dev'].filter(lambda x: x['pairID'] not in train['train']['uid'])
 
 
@@ -45,4 +45,4 @@ if __name__ == '__main__':
         'dev': snli['dev'],
         'test': snli['test']})
 
-    data.save_to_disk('/data/mohamed/data/chaosnli')
+    data.save_to_disk('data/chaosnli')

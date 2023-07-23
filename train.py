@@ -429,7 +429,7 @@ def main():
                     dev_dataset, train_dataloader_ns)
 
         if args.save_losses:
-            np.savez('/data/mohamed/losses/%s_%d.npz'%(args.data, seed), **trainer.losses)
+            np.savez('losses/%s_%d.npz'%(args.data, seed), **trainer.losses)
 
         best_acc, best_step = trainer.load_best()
         if writer is not None:

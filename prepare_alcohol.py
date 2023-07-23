@@ -96,7 +96,7 @@ def diff(labels):
     return diff
 
 if __name__ == '__main__':
-    data = pd.read_csv('/data/mohamed/data/alcohol_raw/alcohol_all.csv',
+    data = pd.read_csv('data/alcohol.csv',
             usecols = ['_unit_id',
                 'is_this_text_about_a_person_or_a_group_of_people_drinking_alcohol',
                 'what_is_the_intensity_of_alcohol_consumption_',
@@ -128,4 +128,4 @@ if __name__ == '__main__':
         'test': Dataset.from_dict(test)
         })
 
-    data.save_to_disk('/data/mohamed/data/alcohol')
+    data.save_to_disk('data/alcohol')

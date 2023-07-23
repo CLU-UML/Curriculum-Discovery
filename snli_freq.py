@@ -12,7 +12,7 @@ tag_dict = {
 lemmatizer = WordNetLemmatizer()
 
 data = load_dataset('json', data_files={
-    name: f'/data/mohamed/data/snli_1.0/snli_1.0_{name}.jsonl'
+    name: f'data/snli_1.0/snli_1.0_{name}.jsonl'
     for name in ['train'] })['train']
 
 freqs = defaultdict(int)

@@ -7,7 +7,7 @@ from datasets import load_from_disk
 dataset = sys.argv[1]
 data = load_from_disk(dataset)
 
-losses = [np.load(fn) for fn in glob('/data/mohamed/losses/%s*'%basename(dataset))]
+losses = [np.load(fn) for fn in glob('losses/%s*'%basename(dataset))]
 train_loss = [l['train'] for l in losses]
 dev_loss = [l['dev'] for l in losses]
 

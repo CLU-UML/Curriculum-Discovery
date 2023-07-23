@@ -9,10 +9,10 @@ model_names = {
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', default='/data/mohamed/data')
-    parser.add_argument('--aim_repo', default='/data/mohamed/')
-    parser.add_argument('--ckpt_dir', default='/data/mohamed/checkpoints/lingcl')
-    parser.add_argument('--preds_dir', default='/data/mohamed/preds')
+    parser.add_argument('--data_dir', default='.')
+    parser.add_argument('--aim_repo', default='.')
+    parser.add_argument('--ckpt_dir', default='.')
+    parser.add_argument('--preds_dir', default='.')
     parser.add_argument('--data', default='snli_balanced')
     parser.add_argument('--curr', default='none')
     parser.add_argument('--aim_exp', default='default')
@@ -20,7 +20,6 @@ def parse_args():
     parser.add_argument('--model_name', default='base')
     parser.add_argument('--num_labels', type=int, default=3)
     parser.add_argument('--glf_cfg')
-    parser.add_argument('--gauss_alpha', type=int, default=40)
     parser.add_argument('--anti_curr', action='store_true')
     parser.add_argument('--diff_classes', type=int, default=3)
     parser.add_argument('--epochs', type=int, default=10)

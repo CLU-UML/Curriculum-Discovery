@@ -74,9 +74,9 @@ def get_name(args):
         curr = 'none'
     elif args.curr == 'sl':
         curr = 'sl_%s'%args.sl_mode 
-    elif args.curr == 'ent' or args.curr == 'ent+':
+    elif args.curr == 'glf' and args.difficulty_score == 'entropy':
         curr = 'ent_%s'%args.glf_cfg
-    elif args.curr == 'loss':
+    elif args.curr == 'glf' and args.difficulty_score == 'loss':
         curr = 'loss_%s'%args.glf_cfg
     elif args.curr == 'spl':
         curr = 'spl_%s'%args.spl_mode
@@ -106,7 +106,7 @@ def init_model(args, device, dataloader, glf_cfg=None):
     elif args.curr == 'none':
         curr = None
     else:
-        raise NameError('Invalid curriculum name')
+        raise NotImplementedError('Invalid curriculum name')
 
     if args.ckpt:
         print('[Resuming]')
