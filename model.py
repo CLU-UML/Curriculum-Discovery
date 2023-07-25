@@ -4,11 +4,11 @@ from datetime import datetime
 from torch import nn
 from torch.optim import SGD
 from transformers import AutoModel, AutoConfig
-from superloss import SuperLoss
-from spl import SPL
-from mentornet import MentorNet
-from glf_curr import GLFCurriculum
-from diff_pred_weighting import DPWeighting
+from curricula.superloss import SuperLoss
+from curricula.spl import SPL
+from curricula.mentornet import MentorNet
+from curricula.glf_curr import GLFCurriculum
+from curricula.diff_pred_weighting import DPWeighting
 from transformers import AutoModel, AutoTokenizer, AdamW, AutoConfig
 from transformers import get_linear_schedule_with_warmup
 import numpy as np
@@ -86,7 +86,7 @@ def get_name(args):
         curr = 'dp'
     else:
         curr = ''
-    diff_score = args.lng_name if args.lng_name else args.diff_score
+    diff_score = args.diff_score
     curtime = datetime.now().strftime('%y%m%d_%H-%M-%S')
     name = f'{curtime}_{args.data}_{diff_score}_{curr}_{args.seed}'
     return name

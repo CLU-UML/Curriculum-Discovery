@@ -7,7 +7,7 @@ from torch import nn
 from datetime import datetime
 from options import parse_args
 from model import init_model, init_opt
-from data import get_dataloaders, update_dataloader
+from data import get_dataloaders
 from sklearn.metrics import accuracy_score, recall_score, matthews_corrcoef, fbeta_score
 from transformers import AutoModel, AutoTokenizer, logging
 from scipy.stats import pearsonr
